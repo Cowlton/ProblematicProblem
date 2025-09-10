@@ -39,15 +39,15 @@ namespace ProblematicProblem
             
             _userInput = Console.ReadLine();
             
-            if (int.TryParse(_userInput, out userAge))
-            {
-                userAge = int.Parse(_userInput);
-            }
-            else
+            if (!int.TryParse(_userInput, out userAge))
             {
                 Console.Write("I see. you do not want me to know your age. Do you?");
                 userAge = 0;
                 Console.WriteLine();
+            }
+            else
+            {
+                userAge = int.Parse(_userInput);
             }
            
 
